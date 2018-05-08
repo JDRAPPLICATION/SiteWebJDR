@@ -1,5 +1,5 @@
 <?php
-    session_start(); // PERMET DE CCHARGER LA SESSION
+    session_start(); // PERMET DE CHARGER LA SESSION
 ?>
 <!DOCTYPE HTML>
 <html>
