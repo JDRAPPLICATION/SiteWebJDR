@@ -363,15 +363,11 @@ $ws3=1;
 $ws4=1;
 $ws5=1;
 $ws6=1;
-$reponsech = $bdd->query('SELECT * From characteristic');
-while ($donnees=$reponsech->fetch()){
-	if($donnees['strength']==$_POST['strength'] && $donnees['constitution']==$_POST['constitution'] && $donnees['size']==$_POST['size'] && $donnees['intelligence']==$_POST['intelligence'] && $donnees['power']==$_POST['power'] && $donnees['dexterity']==$_POST['dexterity'] && $donnees['charism']==$_POST['charism']){
-		$guarry=$donnees['id_ch'];
-		if($guarry >= $ch){
-				$ch=$guarry;
-		}
-	}
-}
+$reponsech = $bdd->query('SELECT * From characteristic Where strength = '.$_POST['strength'].' && constitution = '.$_POST['constitution'].' && size = '.$_POST['size'].' && intelligence = '.$_POST['intelligence'].' && power = '.$_POST['power'].' && dexterity = '.$_POST['dexterity'].' && charism = '.$_POST['charism'].' ORDER BY id_ch DESC');
+		$donnees=$reponsech->fetch();
+		$ch=$donnees['id_ch'];
+
+
 $reponsehp = $bdd->query('SELECT * From hp');
 while ($donnees=$reponsehp->fetch()){
 	if($donnees['currently']==$_POST['Hpcurrently'] && $donnees['max']==$_POST['max']){
@@ -501,8 +497,8 @@ while ($donnees=$reponseho->fetch()){
 }
 
 
-$per = $bdd->prepare('INSERT INTO personage (name_player, name_character, sex, age, eyes_colors, hairs_colors, size, weight, personnal_history, stricking_fack, affliction, elan_point, id_SC1, id_SC2, id_SC3, id_ch, id_cu, id_ho, id_hp, id_sf, id_in, id_kn, id_po, id_sk, id_na, id_ws1, id_ws2, id_ws3, id_ws4, id_ws5, id_ws6) VALUES(:name_player, :name_character, :sex, :age, :eyes_colors, :hairs_colors, :size, :weight, :personnal_history, :stricking_fack, :affliction, :elan_point,  :id_SC1, :id_SC2, :id_SC3, :id_ch, :id_cu, :id_ho, :id_hp, :id_sf, :id_in, :id_kn, :id_po, :id_sk, :id_na, :id_ws1, :id_ws2, :id_ws3, :id_ws4, :id_ws5, :id_ws6)');
-$per->execute(array('name_player' => $_POST['name_player'], 
+$per = $bdd->prepare('INSERT INTO personage (id_player, name_character, sex, age, eyes_colors, hairs_colors, size, weight, personnal_history, stricking_fack, affliction, elan_point, id_SC1, id_SC2, id_SC3, id_ch, id_cu, id_ho, id_hp, id_sf, id_in, id_kn, id_po, id_sk, id_na, id_ws1, id_ws2, id_ws3, id_ws4, id_ws5, id_ws6) VALUES(:id_player, :name_character, :sex, :age, :eyes_colors, :hairs_colors, :size, :weight, :personnal_history, :stricking_fack, :affliction, :elan_point,  :id_SC1, :id_SC2, :id_SC3, :id_ch, :id_cu, :id_ho, :id_hp, :id_sf, :id_in, :id_kn, :id_po, :id_sk, :id_na, :id_ws1, :id_ws2, :id_ws3, :id_ws4, :id_ws5, :id_ws6)');
+$per->execute(array('id_player' => $_SESSION['id'], 
 					'name_character' => $_POST['name_character'], 
 					'sex' => $_POST['sex'], 
 					'age' => $_POST['age'],
@@ -534,36 +530,5 @@ $per->execute(array('name_player' => $_POST['name_player'],
 					'id_ws5' =>$ws5,
 					'id_ws6' =>$ws6,
 				));
-echo '		name_player:'.$_POST['name_player'].
-					'		name_character:'.$_POST['name_character']. 
-					'		sex:'.$_POST['sex'].
-					'		age:'.$_POST['age'].
-					'		eyes_colors:'.$_POST['eyes_colors'].
-					'		hairs_colors:'.$_POST['hairs_colors'].
-					'		size:'.$_POST['size'].
-					'		weight:'.$_POST['weight'].
-					'		personnal_history:'.$_POST['personnal_history'].
-					'		stricking_fack:'.$_POST['stricking_fack'].
-					'		affliction:'.$_POST['affliction'].
-					'		elan_point:'.$_POST['elan_point'].
-					'		id_SC1:'.$_POST['social_class1'].
-					'		id_SC2:'.$_POST['social_class2'].
-					'		id_SC3:'.$_POST['social_class3'].
-					'		id_ch:'.$ch.
-					'		id_cu:'.$_POST['cult'].
-					'		id_ho:'.$ho.
-					'		id_hp:'.$hp.
-					'		id_sf:'.$sf.
-					'		id_in:'.$in.
-					'		id_kn:'.$kn.
-					'		id_po:'.$po.
-					'		id_sk:'.$sk.
-					'		id_na:'.$_POST['nationality'].
-					'		id_ws1:'.$ws1.
-					'		id_ws2:'.$ws2.
-					'		id_ws3:'.$ws3.
-					'		id_ws4:'.$ws4.
-					'		id_ws5:'.$ws5.
-					'		id_ws6:'.$ws6;
 
 ?>
