@@ -368,61 +368,31 @@ $reponsech = $bdd->query('SELECT * From characteristic Where strength = '.$_POST
 		$ch=$donnees['id_ch'];
 
 
-$reponsehp = $bdd->query('SELECT * From hp');
-while ($donnees=$reponsehp->fetch()){
-	if($donnees['currently']==$_POST['Hpcurrently'] && $donnees['max']==$_POST['max']){
-		$guarry=$donnees['id_hp'];
-		if($guarry >= $hp){
-				$hp=$guarry;
-		}
-	}
-}
-$reponsesf = $bdd->query('SELECT * From mental_health');
-while ($donnees=$reponsesf->fetch()){
-	if($donnees['currently']==$_POST['MHcurrently'] && $donnees['sft']==$_POST['sft']){
-		$guarry=$donnees['id_sf'];
-		if($guarry >= $sf){
-				$sf=$guarry;
-		}
-	}
-}
-$reponsein = $bdd->query('SELECT * From invocation');
-while ($donnees=$reponsein->fetch()){
-	if($donnees['type']==$_POST['type'] && $donnees['specialization']==$_POST['specialization'] && $donnees['description']==$_POST['description'] && $donnees['elan_cost']==$_POST['elan_cost']){
-		$guarry=$donnees['id_in'];
-		if($guarry >= $in){
-				$in=$guarry;
-		}
-	}
-}
+$reponsehp = $bdd->query('SELECT * From hp WHERE currently = '.$_POST['Hpcurrently'].' && max = '.$_POST['max'].' ORDER BY id_ch DESC');
+		$donnees=$reponsehp->fetch();
+		$hp=$donnees['id_hp'];
 
-$reponsekn = $bdd->query('SELECT * From knowledge');
-while ($donnees=$reponsekn->fetch()){
-	if($donnees['evaluate_a_treasure']==$_POST['evaluate_a_treasure'] && $donnees['first_aid']==$_POST['first_aid'] && $donnees['cartography']==$_POST['cartography'] && $donnees['memorize']==$_POST['memorize'] && $donnees['plant_knowledge']==$_POST['plant_knowledge'] && $donnees['poison_knowledge']==$_POST['poison_knowledge'] && $donnees['craft']==$_POST['craft'] && $donnees['id_la1']==$LC && $donnees['id_la2']==$LBM && $donnees['id_la3']==$LHM && $donnees['id_la4']==$LP && $donnees['id_la5']==$LM && $donnees['id_la6']==$LO){
-		$guarry=$donnees['id_kn'];
-		if($guarry >= $kn){
-				$kn=$guarry;
-		}
-	}
-}
-$reponsepo = $bdd->query('SELECT * From possesion');
-while ($donnees=$reponsepo->fetch()){
-	if($donnees['money']==$_POST['money'] && $donnees['debt']==$_POST['debt'] && $donnees['weapon']==$_POST['weapon']){
-		$guarry=$donnees['id_po'];
-		if($guarry >= $po){
-				$po=$guarry;
-		}
-	}
-}
-$reponsein = $bdd->query('SELECT * From invocation');
-while ($donnees=$reponsein->fetch()){
-	if($donnees['type']==$_POST['type'] && $donnees['specialization']==$_POST['specialization'] && $donnees['description']==$_POST['description'] && $donnees['elan_cost']==$_POST['elan_cost']){
+$reponsesf = $bdd->query('SELECT * From mental_health WHERE currently = '.$_POST['MHcurrently'].' && sft = '.$_POST['sft'].' ORDER BY id_ch DESC');
+		$donnees=$reponsesf->fetch();
+		$sf=$donnees['id_sf'];
+
+$reponsein = $bdd->query('SELECT * From invocation WHERE type = '.$_POST['type'].' && specialization = '.$_POST['specialization'].' && description = '.$_POST['description'].' && elan_cost = '.$_POST['elan_cost'].' ORDER BY id_ch DESC');
+		$donnees=$reponsein->fetch();
 		$guarry=$donnees['id_in'];
-		if($guarry >= $in){
-				$in=$guarry;
-		}
-	}
-}
+
+$reponsekn = $bdd->query('SELECT * From knowledge WHERE evaluate_a_treasure = '.$_POST['evaluate_a_treasure'].' && first_aid = '.$_POST['first_aid'].' && cartography = '.$_POST['cartography'].' && memorize = '.$_POST['memorize'].' && plant_knowledge = '.$_POST['plant_knowledge'].' && poison_knowledge = '.$_POST['poison_knowledge'].' && craft = '.$_POST['craft'].' && id_la1 = '.$LC.' && id_la2 = '.$LBM.' && id_la3 = '.$LHM.' && id_la4 = '.$LP.' && id_la5 = '.$LM.' && id_la6 = '.$LO.' ORDER BY id_ch DESC');
+		$donnees=$reponsekn->fetch();
+		$kn=$donnees['id_kn'];
+
+$reponsepo = $bdd->query('SELECT * From possesion WHERE money = '.$_POST['money'].' debt = '.$_POST['debt'].' && weapon = '.$_POST['weapon'].' ORDER BY id_ch DESC');
+		$donnees=$reponsepo->fetch();
+		$po=$donnees['id_po'];
+
+$reponsein = $bdd->query('SELECT * From invocation WHERE type = '.$_POST['type'].' && specialization = '.$_POST['specialization'] && $donnees['description']==$_POST['description'] && $donnees['elan_cost']==$_POST['elan_cost']);
+		$donnees=$reponsein->fetch();
+		$guarry=$donnees['id_in'];
+
+
 $reponsesk = $bdd->query('SELECT * From skill');
 while ($donnees=$reponsesk->fetch()){
 	if($donnees['communication']==$_POST['communication'] && $donnees['handing']==$_POST['handing'] && $donnees['perception']==$_POST['perception'] && $donnees['agility']==$_POST['agility'] && $donnees['discretion']==$_POST['discretion'] && $donnees['id_ag']==$ag && $donnees['id_pe']==$pe && $donnees['id_ha']==$ha && $donnees['id_co']==$co && $donnees['id_di']==$di){
