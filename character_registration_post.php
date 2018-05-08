@@ -388,84 +388,42 @@ $reponsepo = $bdd->query('SELECT * From possesion WHERE money = '.$_POST['money'
 		$donnees=$reponsepo->fetch();
 		$po=$donnees['id_po'];
 
-$reponsein = $bdd->query('SELECT * From invocation WHERE type = '.$_POST['type'].' && specialization = '.$_POST['specialization'] && $donnees['description']==$_POST['description'] && $donnees['elan_cost']==$_POST['elan_cost']);
+$reponsein = $bdd->query('SELECT * From invocation WHERE type = '.$_POST['type'].' && specialization = '.$_POST['specialization'].' && description ='.$_POST['description'].' && lan_cost = '.$_POST['elan_cost'].' ORDER BY id_ch DESC');
 		$donnees=$reponsein->fetch();
-		$guarry=$donnees['id_in'];
+		$in=$donnees['id_in'];
 
 
-$reponsesk = $bdd->query('SELECT * From skill');
-while ($donnees=$reponsesk->fetch()){
-	if($donnees['communication']==$_POST['communication'] && $donnees['handing']==$_POST['handing'] && $donnees['perception']==$_POST['perception'] && $donnees['agility']==$_POST['agility'] && $donnees['discretion']==$_POST['discretion'] && $donnees['id_ag']==$ag && $donnees['id_pe']==$pe && $donnees['id_ha']==$ha && $donnees['id_co']==$co && $donnees['id_di']==$di){
-		$guarry=$donnees['id_sk'];
-		if($guarry >= $sk){
-				$sk=$guarry;
-		}
-	}
-}
-$reponsews1 = $bdd->query('SELECT * From weapon_skill');
-while ($donnees=$reponsews1->fetch()){
-	if($donnees['weapon_name']==$_POST['weapon_name1'] && $donnees['attack']==$_POST['attack1'] && $donnees['parad']==$_POST['parad1'] && $donnees['damage']==$_POST['damage1']){
-		$guarry=$donnees['id_ws'];
-		if($guarry >= $ws1){
-				$ws1=$guarry;
-		}
-	}
-}
-$reponsews2 = $bdd->query('SELECT * From weapon_skill');
-while ($donnees=$reponsews2->fetch()){
-	if($donnees['weapon_name']==$_POST['weapon_name2'] && $donnees['attack']==$_POST['attack2'] && $donnees['parad']==$_POST['parad2'] && $donnees['damage']==$_POST['damage2']){
-		$guarry=$donnees['id_ws'];
-		if($guarry >= $ws2){
-				$ws2=$guarry;
-		}
-	}
-}
-$reponsews3 = $bdd->query('SELECT * From weapon_skill');
-while ($donnees=$reponsews3->fetch()){
-	if($donnees['weapon_name']==$_POST['weapon_name3'] && $donnees['attack']==$_POST['attack3'] && $donnees['parad']==$_POST['parad3'] && $donnees['damage']==$_POST['damage3']){
-		$guarry=$donnees['id_ws'];
-		if($guarry >= $ws3){
-				$ws3=$guarry;
-		}
-	}
-}
-$reponsews4 = $bdd->query('SELECT * From weapon_skill');
-while ($donnees=$reponsews4->fetch()){
-	if($donnees['weapon_name']==$_POST['weapon_name4'] && $donnees['attack']==$_POST['attack4'] && $donnees['parad']==$_POST['parad4'] && $donnees['damage']==$_POST['damage4']){
-		$guarry=$donnees['id_ws'];
-		if($guarry >= $ws4){
-				$ws4=$guarry;
-		}
-	}
-}
-$reponsews5 = $bdd->query('SELECT * From weapon_skill');
-while ($donnees=$reponsews5->fetch()){
-	if($donnees['weapon_name']==$_POST['weapon_name5'] && $donnees['attack']==$_POST['attack5'] && $donnees['parad']==$_POST['parad5'] && $donnees['damage']==$_POST['damage5']){
-		$guarry=$donnees['id_ws'];
-		if($guarry >= $ws5){
-				$ws5=$guarry;
-		}
-	}
-}
-$reponsews6 = $bdd->query('SELECT * From weapon_skill');
-while ($donnees=$reponsews6->fetch()){
-	if($donnees['weapon_name']==$_POST['weapon_name6'] && $donnees['attack']==$_POST['attack6'] && $donnees['parad']==$_POST['parad6'] && $donnees['damage']==$_POST['damage6']){
-		$guarry=$donnees['id_ws'];
-		if($guarry >= $ws6){
-				$ws6=$guarry;
-		}
-	}
-}
-$reponseho = $bdd->query('SELECT * From home');
-while ($donnees=$reponseho->fetch()){
-	if($donnees['name']==$_POST['name'] && $donnees['valuable']==$_POST['valuable'] && $donnees['specification']==$_POST['specification'] && $donnees['possesion_of']==$_POST['name_character']){
-		$guarry=$donnees['id_ho'];
-		if($guarry >= $ho){
-				$ho=$guarry;
-		}
-	}
-}
+$reponsesk = $bdd->query('SELECT * From skill WHERE communication = '.$_POST['communication'].' && handing = '.$_POST['handing'].' && perception = '.$_POST['perception'].' && agility = '.$_POST['agility'].' && discretion = '.$_POST['discretion'].' && id_ag = '.$ag.' && id_pe = '.$pe.' && id_ha = '.$ha.' && id_co = '.$co.' && id_di '.=$di.' ORDER BY id_ch DESC');
+		$donnees=$reponsesk->fetch();
+		$sk=$donnees['id_sk'];
 
+$reponsews1 = $bdd->query('SELECT * From weapon_skill WHERE weapon_name = '.$_POST['weapon_name1'].' && attack = '.$_POST['attack1'].' && parad = '.$_POST['parad1'].' && damage = '.$_POST['damage1'].' ORDER BY id_ch DESC');
+		$donnees=$reponsews2->fetch();
+		$ws1=$donnees['id_ws'];
+
+$reponsews2 = $bdd->query('SELECT * From weapon_skill WHERE weapon_name = '.$_POST['weapon_name2'].' && attack = '.$_POST['attack2'].' && parad = '.$_POST['parad2'].' && damage = '.$_POST['damage2'].' ORDER BY id_ch DESC');
+		$donnees=$reponsews2->fetch();
+		$ws2=$donnees['id_ws'];
+
+$reponsews3 = $bdd->query('SELECT * From weapon_skill WHERE weapon_name = '.$_POST['weapon_name3'].' && attack = '.$_POST['attack3'].' && parad = '.$_POST['parad3'].' && damage = '.$_POST['damage3'].' ORDER BY id_ch DESC');
+		$donnees=$reponsews3->fetch();
+		$ws3=$donnees['id_ws'];
+
+$reponsews4 = $bdd->query('SELECT * From weapon_skill WHERE weapon_name = '.$_POST['weapon_name4'].' && attack = '.$_POST['attack4'].' && parad = '.$_POST['parad4'].' && damage = '.$_POST['damage4'].' ORDER BY id_ch DESC');
+		$donnees=$reponsews4->fetch();
+		$ws4=$donnees['id_ws'];
+
+$reponsews5 = $bdd->query('SELECT * From weapon_skill WHERE weapon_name = '.$_POST['weapon_name5'].' && attack = '.$_POST['attack5'].' && parad = '.$_POST['parad5'].' && damage = '.$_POST['damage5'].' ORDER BY id_ch DESC');
+		$donnees=$reponsews5->fetch();
+		$ws5=$donnees['id_ws'];
+
+$reponsews6 = $bdd->query('SELECT * From weapon_skill WHERE weapon_name = '.$_POST['weapon_name6'].' && attack = '.$_POST['attack6'].' && parad = '.$_POST['parad6'].' && damage = '.$_POST['damage6'].' ORDER BY id_ch DESC');
+		$donnees=$reponsews6->fetch();
+		$ws6=$donnees['id_ws'];
+
+$reponseho = $bdd->query('SELECT * From home WHERE name = '.$_POST['name'].' && valuable = '.$_POST['valuable'].' && specification = '.$_POST['specification'].' && possesion_of = '.$_POST['name_character'].' ORDER BY id_ch DESC');
+		$donnees=$reponseho->fetch();
+		$ho=$donnees['id_ho'];
 
 $per = $bdd->prepare('INSERT INTO personage (id_player, name_character, sex, age, eyes_colors, hairs_colors, size, weight, personnal_history, stricking_fack, affliction, elan_point, id_SC1, id_SC2, id_SC3, id_ch, id_cu, id_ho, id_hp, id_sf, id_in, id_kn, id_po, id_sk, id_na, id_ws1, id_ws2, id_ws3, id_ws4, id_ws5, id_ws6) VALUES(:id_player, :name_character, :sex, :age, :eyes_colors, :hairs_colors, :size, :weight, :personnal_history, :stricking_fack, :affliction, :elan_point,  :id_SC1, :id_SC2, :id_SC3, :id_ch, :id_cu, :id_ho, :id_hp, :id_sf, :id_in, :id_kn, :id_po, :id_sk, :id_na, :id_ws1, :id_ws2, :id_ws3, :id_ws4, :id_ws5, :id_ws6)');
 $per->execute(array('id_player' => $_SESSION['id'], 

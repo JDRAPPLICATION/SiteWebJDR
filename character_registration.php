@@ -6,7 +6,7 @@
 <html>
     <head>
         <title>JDR ESAIP</title>
-        <meta http-equiv="Content-Type" content="text/html"; charset=UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8" />
         <link rel="stylesheet" href="CSS_1.css" />
         <link rel="icon" type="image/x-ico" href="logo.ico" />
     </head>
