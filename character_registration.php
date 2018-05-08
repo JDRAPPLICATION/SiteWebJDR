@@ -1,5 +1,6 @@
 <?php
     session_start(); // PERMET DE CHARGER LA SESSION
+    include("includes/identifiants.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -155,141 +156,105 @@
                 <label for="craft">craft</label> :  <input type="number" name="craft" id="craft" /><br />
             </br>
                 <label for="cult">cult</label> :
-                    <select name="cult">
-                        <optgroup label="Chaos">
-                            <option value="1">Pyaray</option>
-                            <option value="2">Arioch</option>
-                            <option value="3">Orunlu</option>
-                            <option value="4">Chardhros</option>
-                            <option value="5">Balo</option>
-                            <option value="6">Naryhan</option>
-                            <option value="7">Chekalak</option>
-                            <option value="8">Xiombarg</option>
-                            <option value="9">Mabelrode</option>
-                            <option value="10">Hionborn</option>
-                            <option value="11">Verhan</option> 
-                            <option value="12">Eequor</option>
-                            <option value="13">Darnishaan</option>
-                            <option value="14">Belan</option>
-                            <option value="15">Malut</option>
-                            <option value="16">Malchin</option>
-                            <option value="17">Zhontra</option>
-                            <option value="18">Slotar le vieux</option>
-                            <option value="19">Urleh</option>
-                            <option value="20">Teer</option>
-                        </optgroup>
-                        <optgroup label="Low">
-                            <option value="21">Donthas</option>
-                            <option value="22">Arkyn</option>
-                            <option value="23">Goldar</option>
-                        </optgroup>
-                        <optgroup label="Elementary">
-                            <option value="24">Straasha(water)</option>
-                            <option value="25">Groma(earth)</option>
-                            <option value="26">Lassa(air)</option>
-                            <option value="43">Pozz-Mann-Llyrr(air)</option>
-                            <option value="27">Kakotal(fire)</option>
-                        </optgroup>
-                        <optgroup label="Lord of beasts">
-                            <option value="28">Nnuuum'c'c'</option>
-                            <option value="29">Haaashaastaak</option>
-                            <option value="30">Filet</option>
-                            <option value="31">Meerclaw</option>
-                            <option value="32">Raffdrak</option>
-                            <option value="33">Jaanumaarch</option>
-                            <option value="34">p!p!pp'hhhh'p't</option>
-                            <option value="35">Skweeeeeee</option>
-                            <option value="36">Uurr-Rzzzrr</option>
-                            <option value="37">Mhaabar'mmpa</option>
-                            <option value="38">Shwa-shwaa</option>
-                            <option value="39">Keheheh</option>
-                            <option value="40">Ssss'sss'ssaan</option>
-                            <option value="41">Vvwyy'hunnh</option>
-                            <option value="42">Muru'ah</option>                
-                        </optgroup>
-                    </select>
-            </br>
-                <label for="nationality">nationality</label> :   
-                    <select name="nationality">
-                        <option value="1">Melnibone</option>
-                        <option value="2">Pan Tang</option>
-                        <option value="3">Myrrhyn</option>
-                        <option value="4">Dharijor</option>
-                        <option value="5">Jharkor</option>
-                        <option value="6">Shazaar</option>
-                        <option value="7">Tarkesh</option>
-                        <option value="8">Vilmir</option>
-                        <option value="9">Ilmiora</option>
-                        <option value="10">Nadsokor</option>
-                        <option value="11">Désert des Larmes</option>
-                        <option value="12">Eshmir</option>
-                        <option value="13">Ile des Cités Pourpres</option>
-                        <option value="14">Argimiliar</option>
-                        <option value="15">Pikarayd</option>
-                        <option value="16">Lormyr</option>
-                        <option value="17">Filkhar</option>
-                        <option value="18">Oin</option>
-                        <option value="19">Yu</option>
-                        <option value="20">Org</option>
-                    </select>
-            </br>
-                <label for="social_class1">social class n°1</label> :   
-                <select name="social_class1">
-                    <option value="1">Null</option>
-                    <option value="2">Guerrier</option>
-                    <option value="3">Assassin</option>
-                    <option value="4">Marchand</option>
-                    <option value="5">Négociant</option>
-                    <option value="6">Marin</option>
-                    <option value="7">Second</option>
-                    <option value="8">Capitaine</option>
-                    <option value="9">Chasseur</option>
-                    <option value="10">Fermier</option>
-                    <option value="11">Prêtre</option>
-                    <option value="12">Noble</option>
-                    <option value="13">Voleur</option>
-                    <option value="14">Mendiant</option>
-                    <option value="15">Artisan</option>
-                </select>
-            </br>
-                <label for="social_class2">social class n°2</label> :   
-                <select name="social_class2">
-                    <option value="1">Null</option>
-                    <option value="2">Guerrier</option>
-                    <option value="3">Assassin</option>
-                    <option value="4">Marchand</option>
-                    <option value="5">Négociant</option>
-                    <option value="6">Marin</option>
-                    <option value="7">Second</option>
-                    <option value="8">Capitaine</option>
-                    <option value="9">Chasseur</option>
-                    <option value="10">Fermier</option>
-                    <option value="11">Prêtre</option>
-                    <option value="12">Noble</option>
-                    <option value="13">Voleur</option>
-                    <option value="14">Mendiant</option>
-                    <option value="15">Artisan</option>
-                </select>
-            </br>
-                <label for="social_class3">social class n°3</label> :   
-                <select name="social_class3" >
-                    <option value="1">Null</option>
-                    <option value="2">Guerrier</option>
-                    <option value="3">Assassin</option>
-                    <option value="4">Marchand</option>
-                    <option value="5">Négociant</option>
-                    <option value="6">Marin</option>
-                    <option value="7">Second</option>
-                    <option value="8">Capitaine</option>
-                    <option value="9">Chasseur</option>
-                    <option value="10">Fermier</option>
-                    <option value="11">Prêtre</option>
-                    <option value="12">Noble</option>
-                    <option value="13">Voleur</option>
-                    <option value="14">Mendiant</option>
-                    <option value="15">Artisan</option>
-                </select>
-            </br>
+            <select name="cult">
+                <optgroup label="Chaos">
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Chaos"');
+                        while ($donnees = $reponse->fetch())
+                        {
+                    ?>
+                            <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+                    <?php
+                        }
+                    ?>
+                </optgroup>
+                <optgroup label="Loyal">
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Loyal"');
+                        while ($donnees = $reponse->fetch())
+                        {
+                    ?>
+                            <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+                    <?php
+                        }
+                    ?>
+                </optgroup>
+                <optgroup label="Elementary">
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM cult WHERE type_god LIKE "Elementaire%"');
+                        while ($donnees = $reponse->fetch())
+                        {
+                    ?>
+                            <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+                    <?php
+                        }
+                    ?>
+                </optgroup>
+                <optgroup label="Lord of beasts">
+                    <?php
+                        $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Seigneur des bêtes"');
+                        while ($donnees = $reponse->fetch())
+                        {
+                    ?>
+                            <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+                    <?php
+                        }
+                    ?>               
+                </optgroup>
+            </select>
+    			</br>
+    		    <label for="nationality">nationality</label> :   
+    		        <select name="nationality">
+    		            <?php
+    		            $reponse = $bdd->query('SELECT * FROM nationality');
+    		            while ($donnees = $reponse->fetch())
+    		            {
+    		        ?>
+    		                <option value= <?php echo $donnees['id_na'];?> > <?php echo $donnees['name']; ?></option>
+    		        <?php
+    		            }
+    		        ?>
+    		        </select>
+    		</br>
+    		    <label for="social_class1">social class n°1</label> :   
+    		    <select name="social_class1">
+    		        <?php
+    		            $reponse = $bdd->query('SELECT * FROM social_class');
+    		            while ($donnees = $reponse->fetch())
+    		            {
+    		        ?>
+    		                <option value= <?php echo $donnees['id_SC'];?> > <?php echo $donnees['name']; ?></option>
+    		        <?php
+    		            }
+    		        ?>
+    		    </select>
+    		</br>
+    		    <label for="social_class2">social class n°2</label> :   
+    		    <select name="social_class2">
+    		        <?php
+    		            $reponse = $bdd->query('SELECT * FROM social_class');
+    		            while ($donnees = $reponse->fetch())
+    		            {
+    		        ?>
+    		                <option value= <?php echo $donnees['id_SC'];?> > <?php echo $donnees['name']; ?></option>
+    		        <?php
+    		            }
+    		        ?>
+    		    </select>
+    		</br>
+    		    <label for="social_class3">social class n°3</label> :   
+    		    <select name="social_class3" >
+    		        <?php
+    		            $reponse = $bdd->query('SELECT * FROM social_class');
+    		            while ($donnees = $reponse->fetch())
+    		            {
+    		        ?>
+    		                <option value= <?php echo $donnees['id_SC'];?> > <?php echo $donnees['name']; ?></option>
+    		        <?php
+    		            }
+    		        ?>
+    		    </select>
+    		</br>
                             <p1>Language</p1></br>
                 <label for="Language_commun">Language commun</label> :  <input type="number" name="laCw" id="laCw" placeholder="write"      /> <input type="number" name="laCr" id="laCr" placeholder="read" /><br />
                 <label for="Bas_Melniboneen">Bas Melnibonéen</label> :  <input type="number" name="laBMw" id="laBMw" placeholder="write"         /> <input type="number" name="laBMr" id="laBMr" placeholder="read" /><br />
