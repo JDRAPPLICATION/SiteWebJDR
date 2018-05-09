@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	include("includes/functions.php");
+	include("includes/constants.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -22,15 +24,15 @@
 								<li class="menu-esaipJ"><a href="Stormbringer.php">Stormbringer</a>
 									<ul class="submenu">
 									     <li><a href="National.php">Nationalité</a></li>
-									     <li><a href="Classe.php">Classe</a></li>
-									     <li><a href="Histoire.php">Histoire du Monde</a></li>
+									     <li><a href="WorkInProgress.php">Classe</a></li>
+									     <li><a href="WorkInProgress.php">Histoire du Monde</a></li>
 									</ul>
 								</li>
 								<li class="menu-esaipE"><a href="#">Donjon et Dragons</a>
 									<ul class="submenu">
-									     <li><a href="#">Nationalité</a></li>
-									     <li><a href="#">Classe</a></li>
-									     <li><a href="#">Histoire du Monde</a></li>
+									     <li><a href="WorkInProgress.php">Nationalité</a></li>
+									     <li><a href="WorkInProgress.php">Classe</a></li>
+									     <li><a href="WorkInProgress.php">Histoire du Monde</a></li>
 									</ul>
 								</li>
 								<?php 
@@ -43,12 +45,13 @@
 											</ul>
 										</li>';
 								}
-								if (isset($_SESSION['pseudo']) && $_SESSION['level']== 2) {
+								if (isset($_SESSION['pseudo']) && $_SESSION['level']== MJ ) {
 									echo '<li class="menu-esaipE"><a href="#">section MJ</a>
 											<ul class="submenu">
 									     		<li><a href="new_nationality.php">Créer une nationlitée</a></li>
 									    		<li><a href="create_class.php">Créer une classe</a></li>
 									    		<li><a href="new_cult.php">Créer un culte</a></li>
+									    		<li><a href="new_cult.php">Gérer les classes, cultes ou nationalité</a></li>
 											</ul>
 										</li>';
 								}
@@ -77,7 +80,4 @@
 	$id=(isset($_SESSION['id']))?(int) $_SESSION['id']:0;
 	$pseudo=(isset($_SESSION['pseudo']))?$_SESSION['pseudo']:'';
 	
-	//On inclue les 2 pages restantes
-	include("includes/functions.php");
-	include("includes/constants.php");
 ?>
