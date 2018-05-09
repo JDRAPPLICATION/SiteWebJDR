@@ -1,5 +1,6 @@
 <?php 
 include("debut.php");
+include("includes/identifiants.php");
 ?>
     
                     <article class="Farticle">
@@ -9,7 +10,7 @@ include("debut.php");
                                         // Connexion à la base de données
                                         if (isset($_POST['pseudo'])) {
                                             // Insertion du message à l'aide d'une requête préparée
-                                            $log = $bdd->prepare('INSERT INTO account (pseudo,name,mail,surname,password) VALUES                                     (:name,:surname,:email,:pseudo,:password)');
+                                            $log = $bdd->prepare('INSERT INTO account (pseudo,name,mail,surname,password) VALUES                                     (:pseudo,:surname,:email,:name,:password)');
                                         
                                             $ps=0;
                                         
