@@ -22,6 +22,22 @@ include("debut.php");
 						    $_SESSION['pseudo'] = $data['pseudo'];
 						    $_SESSION['level'] = $data['level'];
 						    $_SESSION['id'] = $data['id_account'];
+
+						    $_SESSION['l1'] =0;
+						    $_SESSION['l2'] =0;
+						    $_SESSION['l3'] =0;
+						    $_SESSION['l4'] =0;
+						    $_SESSION['l5'] =0;
+						    $_SESSION['l6'] =0;
+						    $_SESSION['l7'] =0;
+						    $_SESSION['l8'] =0;
+
+						    $_SESSION['n1'] =0;
+						    $_SESSION['n2'] =0;
+
+						    
+
+
 						    $message = '<p>Bienvenue '.$data['pseudo'].', 
 					        	vous êtes maintenant connecté!</p>
 					        	<p>Cliquez <a href="index.php">ici</a> 

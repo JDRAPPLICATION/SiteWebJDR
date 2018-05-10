@@ -5,7 +5,7 @@ include("includes/identifiants.php");
 
 					<div>
 
-							<article id=Allarticle>
+							<article id="Allarticle">
 								<header>
 									<h2>Les Nationalités</h2>
 								</header>
@@ -20,7 +20,7 @@ include("includes/identifiants.php");
     		           				 {
     		        			?>
     		                			<section>
-										<article id=Allarticle>
+										<article id="Allarticle">
 											<header>
 												<h2><?php echo $donnees['name'];?></h2>
 											</header>
@@ -57,7 +57,6 @@ include("includes/identifiants.php");
 						</section>
 					</footer>
 
-			</div>
 
 	</body>
 </html>

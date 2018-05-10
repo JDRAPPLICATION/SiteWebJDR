@@ -37,9 +37,9 @@
 								</li>
 								<?php 
 								if (isset($_SESSION['pseudo'])) {
-									echo '<li class="menu-esaipE"><a href="#">Personnages</a>
+									echo '<li class="menu-esaipE"><a href="#">Personnages Stormbringer</a>
 											<ul class="submenu">
-									     		<li><a href="#">Créer un personnage</a></li>
+									     		<li><a href="character_creation.php">Créer un personnage</a></li>
 									    		<li><a href="select_character.php">Voir ses personnages</a></li>
 											    <li><a href="character_registration.php">Enregistrer un personnages</a></li>
 											</ul>

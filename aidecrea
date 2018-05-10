@@ -1,0 +1,252 @@
+Melniboné
++Ajouter 1D10 à l'intelligence.
++Ajouter 2D6 au pouvoir.
++Ajoutez 3 à la taille.
++Ajoutez 20 à la santé mentale.
++Toujours guerrier et un noble.
++Si INt+POU >= 32, il seras sorcier.
+
+Pan Tang
++Ajoutez 1D8 a l'INT.
++Ajoutez 1D8 au POU.
++Ajoutez 1 à la TAI.
++Ajoutez 10 à la SAN.
++Si INT+POU >= 32 le personnage est un sorcier et prêtre. Sinon un Guerrier.
++Sur 1D100 si le jet est compris entre 01 et 20 le personnage est un noble.
+
+Myrrhyn
++Peuvent voler,s'il n'est pas lourdement chargé.
++joutez 1D6 à L'INT.
++Ajoutez 1D6 au POU.
++Ajoutez 1D6 au CHA.
++Si le personnage est une femme ajoutez 5 à la SAN.
++SI INT+POU >= 32 le personnage est un sorcier.
++Enlever 2 à la TAI si >= à 9.
+Origine sociale: si Marin, Voleur ou Mendiant, alors le personnage est un guerrier.
+
+Dharijor
++Ajoutez 1D4 à la CON.
+Adoration des Seigneurs du Chaos.
+
+Jharkor
+Jetez 1D6:
+ -entre 1 et 2 corpulence faible
+ -entre 3 et 4 corpulence moyenne
+ -entre 5 et 6 corpulence forte
+Adoration des Seigneurs du Chaos.
++Enlevez 1D4 au CHA.
++Ajoutez 1D4 à la DEX.
+
+Shazaar
+Jetez 1D6:
+ -entre 1 et 2 corpulence faible
+ -entre 3 et 4 corpulence moyenne
+ -entre 5 et 6 corpulence forte
++Ajoutez 1D6 à la COn.
+
+Tarkesh
+Corpulence forte ou moyenne au choix.
++Ajoutez 1D4 à la CON.
++Otez 1 à la TAI si >= 10.
+Nom composé en trois parties.
+
+Vilmir
+Jetez 1D6:
+ -1 corpulence faible
+ -entre 2 et 5 corpulence moyenne
+ -6 corpulence forte
+
+Ilmiora
++Ajoutez 1D4 au CHA.
+Jetez 1D6:
+ -1 corpulence faible
+ -entre 2 et 5 corpulence moyenne
+ -6 corpulence forte
+
+Nadsokor
++Enlevez 1D6 à la CON.
++Enlever 1D6 au CHA
++Obligatoirement un mendiant.
++Jetez 1D20 sur le tableau des afflictions.
+
+Desert des larmes
+Corpulence moyenne.
++Ajoutez 1D6 à la FOR.
++Ajoutez 1D4 à la DEX.
++Ajoutez 1D6 à la CON.
++Enlevez 1D4 au CHA.
++Enlevez 1 à la TAI si >= 10.
+Obligatoirement  chasseur ou guerrier.
++Equitation 80% + 1D6.
+
+Eshmir
+Adoration des Seigneurs du Chaos.
++Ajoutez 1D4  à l'INT.
++Ajoutez 1D6 au POU.
++Enlevez 2 à la TAI si >= 10.
++Ajoutez 5 à la SAN.
++Si INT+POU >= 32 le personnage est un prêtre et sorcier si en plus la FOR >= 13 le personnage est un prêtre-guerrier.
+Sinon 1D00 sur le tableau des origines sociales.
+
+Ile des Cités Pourpres
+Corpulence moyenne ou forte au choix.
++Ajoutez 1D4 à la FOR.
++Ajoutez 1D6 à la CON.
+Si chasseur alors le personnage est un marin.
+
+Argimiliar
+Aucune modification. ;)
+Corpulence moyenne.
+
+Pikarayd
++Ajoutez 2D4 à la FOR.
++Ajoutez 1 à la TAI.
+Corpulence moyenne ou forte au choix.
+
+Lormyr
++Enlevez 1D4 à l'INT.
++Ajoutez 2 à la TAI.
+Corpulence moyenne ou forte au choix.
+
+Filkhar
+Corpulence forte ou moyenne au choix.
++Ajoute 1D4 à la Dex.
+
+Oin
++Enlevez 1D6 à l'INT si >= 10.
++Enlevez 1D6 à la DEX si >= 10.
++Enlevez 1D6 au POU si >= 10..
++Ajoutez 1D6 à la CON.
++Enlevez 10 à la SAN.
+Si le personnage tire un Prêtre ou Marin alors il seras un Fermier.
+
+Yu
++Enlevez 1D6 à l'INT si >= 10.
++Enlevez 1D6 au POU si >= 10.
++Enlevez 1D6 au CHA si >= 10.
++Ajoutez 1D6 à la FOR.
++Ajoutez 1D6 à la CON.
++Enlevez 10 à la SAN.
+Tout jet de Prêtre, Marin ou Marchand devient un Chasseur.
+
+Org
++Enlevez 2D4 au POU si >= 10.
++Enlevez 2D4 au CHA si >= 10.
++Enlevez 1D6 à l'INT si >= 10.
++Enlevez 1D6 à la DEX si >= 10.
++Ajoutez 1D8 à la CON.
++Ajoutez 1D4 à la FOR.
++Enlevez 2 à la TAI si >= 10.
++Enlevez 20 à la SAN.
++Sur 1D20:
++ -1: le personnage est un Noble
++ -sinon: le personnage est un Chasseur
+
+
+
+
+
+
+switch ($_SESSION['NA']) {
+						    		
+						    		case 'Melniboné':
+						    			
+						    			break;
+						    		case 'Pan Tang':
+						    			
+						    			break;
+						    		case 'Myrrhyn':
+						    			
+						    			break;
+						    		case 'Dharijor':
+						    			
+						    			break;
+						    		case 'Jharkor':
+						    				
+						    			break;
+						    		case 'Shazaar':
+						    			
+						    			break;
+						    		case 'Tarkesh':
+						    			
+						    			break;
+						    		case 'Vilmir':
+						    			
+						    			break;
+						    		case 'Ilmiora':
+						    			
+						    			break;
+						    		case 'Nadsokor':
+						    			
+						    			break;
+						    		case 'Désert de Larmes':
+						    			
+						    			break;
+						    		case 'Eshmir':
+						    			
+						    			break;
+						    		case 'Ile des Cités Pourpres':
+						    			
+						    			break;
+						    		case 'Argimiliar':
+						    			
+						    			break;
+						    		case 'Pikarayd':
+						    			
+						    			break;
+						    		case 'Lormyr':
+						    			
+						    			break;
+						    		case 'Filkhar':
+						    			
+						    			break;
+						    		case 'Oin':
+						    			
+						    			break;
+						    		case 'Yu':
+						    			
+						    			break;
+						    		case 'Org':
+						    			
+						    			break;
+						    	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form action="character_creation_post.php" method="post">
+	
+	<label></label><select name="class">
+		<option value= "Non" > NON-utilisé </option>
+		<option value= "FORC" > FORce </option>
+		<option value= "CON" > CONstitution </option>
+		<option value= "TAI" > TAIlle </option>
+		<option value= "INTE" > INTelligence </option>
+		<option value= "POU" > POUvoir </option>
+		<option value= "DEX" > DEXterité </option>
+		<option value= "CHA" > CHArisme </option>
+	</select><br>
+	
+
+	<input type="submit" value="check les donées" name="check_les_données">
+</form>
+
+
+
+
+
+
+
+
+
+
+
