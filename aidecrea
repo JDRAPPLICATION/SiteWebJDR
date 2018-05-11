@@ -408,5 +408,74 @@ Artisan
 
 
 
+$agi = $bdd -> prepare('INSERT INTO agility(to_climb, to_avoid, jump, horse_riding, swim, trumble) VALUES(:to_climb, :to_avoid, :jump, :horse_riding, :swim, :trumble)');
+$agi->execute(array(	'to_climb' => $_SESSION['GRI'] + $_SESSION['boAGI'],
+						'to_avoid' => $_SESSION['EVI']+ $_SESSION['boAGI'],
+						'jump' => $_SESSION['SAU']+ $_SESSION['boAGI'],
+						'horse_riding' => $_SESSION['EQUITA']+ $_SESSION['boAGI'],
+						'swim' => $_SESSION['NAG']+ $_SESSION['boAGI'], 
+						'trumble' => $_SESSION['CULBU']+ $_SESSION['boAGI'],
+					));
+
+$charact = $bdd -> prepare('INSERT INTO characteristic(strength, constitution, size, intelligence, power, dexterity, charism) VALUES(:strength, :constitution, :size, :intelligence, :power, :dexterity, :charism)');
+$charact->execute(array('strength' => $_SESSION['FOR'],
+						'constitution' => $_SESSION['CON'],
+						'size' => $_SESSION['TAI'],
+						'intelligence' => $_SESSION['INT'],
+						'power' => $_SESSION['POU'],
+						'dexterity' => $_SESSION['DEX'],
+						'charism' => $_SESSION['CHA'],
+					));
 
 
+$comm = $bdd -> prepare('INSERT INTO communication(credit, persuade, eloquence, sing) VALUES(:credit, :persuade, :eloquence, :sing)');
+$comm->execute(array('credit' => $_SESSION['CRE'] + $_SESSION['boCOMM'],
+					'persuade' => $_SESSION['PERSU'] + $_SESSION['boCOMM'],
+					'eloquence' => $_SESSION['ELO'] + $_SESSION['boCOMM'],
+					'sing' => $_SESSION['CHAN'] + $_SESSION['boCOMM'],
+					));
+
+$dis = $bdd -> prepare('INSERT INTO discretion(ambush, hide, to_hide, silent_movement, cut_a_purse) VALUES(:ambush, :hide, :to_hide, :silent_movement, :cut_a_purse)');
+$dis->execute(array('ambush' => $_SESSION['EMB'] + $_SESSION['boDIS'],
+					'hide' => $_SESSION['DISS'] + $_SESSION['boDIS'],
+					'to_hide' => $_SESSION['SCA'] + $_SESSION['boDIS'],
+					'silent_movement' => $_SESSION['MOUSI'] + $_SESSION['boDIS'],
+					'cut_a_purse' => $_SESSION['COUBOU'] + $_SESSION['boDIS'],
+					));
+
+$han = $bdd -> prepare('INSERT INTO handing(juggle, crochet, trick, make_a_knot, make_a_trap) VALUES(:juggle, :crochet, :trick, :make_a_knot, :make_a_trap)');
+$han->execute(array('juggle' => $_SESSION['JON'] + $_SESSION['boMAN'],
+					'crochet' => $_SESSION['CRO'] + $_SESSION['boMAN'],
+					'trick' => $_SESSION['PASPAS'] + $_SESSION['boMAN'],
+					'make_a_knot' => $_SESSION['FNE'] + $_SESSION['boMAN'],
+					'make_a_trap' => $_SESSION['FPI'] + $_SESSION['boMAN'],
+					));
+
+$percep = $bdd -> prepare('INSERT INTO perception(balance, listen, feel, look_for, see, to_taste, track) VALUES(:balance, :listen, :feel, :look_for, :see, :to_taste, :track)');
+$percep->execute(array('balance' => $_SESSION['EQUILI'] + $_SESSION['boPERC'],
+					'listen' => $_SESSION['ECOU'] + $_SESSION['boPERC'],
+					'feel' => $_SESSION['SEN'] + $_SESSION['boPERC'],
+					'look_for' => $_SESSION['CHER'] + $_SESSION['boPERC'],
+					'see' => $_SESSION['VOIR'] + $_SESSION['boPERC'],
+					'to_taste' => $_SESSION['GOU'] + $_SESSION['boPERC'],
+					'track' => $_SESSION['PIST'] + $_SESSION['boPERC'],
+					));
+
+
+
+
+$kno = $bdd -> prepare('INSERT INTO knowledge(evaluate_a_treasure, first_aid, cartography, memorize, plant_knowledge, poison_knowledge, craft, id_la1, id_la2, id_la3, id_la4, id_la5, id_la6) VALUES(:evaluate_a_treasure, :first_aid, :cartography, :memorize, :plant_knowledge, :poison_knowledge, :craft, :id_la1, :id_la2, :id_la3, :id_la4, :id_la5, :id_la6)');
+$kno->execute(array('evaluate_a_treasure' => $_SESSION['EVaT'] + $_SESSION['boCO'],
+					'first_aid' => $_SESSION['PS'] + $_SESSION['boCO'],
+					'cartography' => $_SESSION['CAR'] + $_SESSION['boCO'],
+					'memorize' => $_SESSION['MEM'] + $_SESSION['boCO'],
+					'plant_knowledge' => $_SESSION['CONdesPLA'] + $_SESSION['boCO'],
+					'poison_knowledge' => $_SESSION['CONdesPOI'] + $_SESSION['boCO'],
+					'craft' => $_SESSION['ARTI'] + $_SESSION['boCO'],
+					'id_la1' => $LC,
+					'id_la2' => $LBM,
+					'id_la3' => $LHM,
+					'id_la4' => $LP,
+					'id_la5' => $LM,
+					'id_la6' => $LO,
+					));

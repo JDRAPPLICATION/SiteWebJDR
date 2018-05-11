@@ -12,6 +12,14 @@
 						    $_SESSION['SEX'] =$_POST['sex'];
 						    $_SESSION['AFLI'] ="";
 
+echo 						$_SESSION['nameca']."=".$_POST['nameca']."//";
+echo 							$_SESSION['age']."=".$_POST['age']."//";
+echo 							$_SESSION['eyes']."=".$_POST['eyes']."//";
+echo 							$_SESSION['hairs']."=".$_POST['hairs']."//";
+echo 							$_SESSION['size']."=".$_POST['size']."//";
+echo 							$_SESSION['weight']."=".$_POST['weight']."//";
+echo 							$_SESSION['personal']."=".$_POST['personal']."//";
+echo 						    $_SESSION['SEX']."=".$_POST['sex']."//";
 
 
 
@@ -96,32 +104,32 @@
 						    $_SESSION['A1n'] =0;
 						    $_SESSION['A1a'] =0;
 						    $_SESSION['A1p'] =0;
-						    $_SESSION['A1d'] =0;
+						    $_SESSION['A1d'] ="";
 
 						    $_SESSION['A2n'] =0;
 						    $_SESSION['A2a'] =0;
 						    $_SESSION['A2p'] =0;
-						    $_SESSION['A2d'] =0;
+						    $_SESSION['A2d'] ="";
 
 						    $_SESSION['A3n'] =0;
 						    $_SESSION['A3a'] =0;
 						    $_SESSION['A3p'] =0;
-						    $_SESSION['A3d'] =0;
+						    $_SESSION['A3d'] ="";
 
 						    $_SESSION['A4n'] =0;
 						    $_SESSION['A4a'] =0;
 						    $_SESSION['A4p'] =0;
-						    $_SESSION['A4d'] =0;
+						    $_SESSION['A4d'] ="";
 
 						    $_SESSION['A5n'] =0;
 						    $_SESSION['A5a'] =0;
 						    $_SESSION['A5p'] =0;
-						    $_SESSION['A5d'] =0;
+						    $_SESSION['A5d'] ="";
 
 						    $_SESSION['A6n'] =0;
 						    $_SESSION['A6a'] =0;
 						    $_SESSION['A6p'] =0;
-						    $_SESSION['A6d'] =0;
+						    $_SESSION['A6d'] ="";
 
 
 						    
