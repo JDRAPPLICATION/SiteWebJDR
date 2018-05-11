@@ -76,7 +76,7 @@ Corpulence moyenne.
 +Ajoutez 1D6 à la CON.
 +Enlevez 1D4 au CHA.
 +Enlevez 1 à la TAI si >= 10.
-Obligatoirement  chasseur ou guerrier.
++Obligatoirement  chasseur ou guerrier.
 +Equitation 80% + 1D6.
 
 Eshmir
@@ -86,7 +86,7 @@ Adoration des Seigneurs du Chaos.
 +Enlevez 2 à la TAI si >= 10.
 +Ajoutez 5 à la SAN.
 +Si INT+POU >= 32 le personnage est un prêtre et sorcier si en plus la FOR >= 13 le personnage est un prêtre-guerrier.
-Sinon 1D00 sur le tableau des origines sociales.
++Sinon 1D00 sur le tableau des origines sociales.
 
 Ile des Cités Pourpres
 Corpulence moyenne ou forte au choix.
@@ -243,7 +243,167 @@ switch ($_SESSION['NA']) {
 
 
 
+<?php echo SetNationality($_SESSION['n1']);?>
 
+
+
+
+
+
+
+
+
+
+
+Guerrier
+1er Arme au choix Attaque et Parade : +50%.
+2eme Arme au choix Attaque et Parade : +40%.
+3eme Arme au choix Attaque et Parade : +30%.
+60% de chance de pratique l'équitation à 65% sinon seulement 25%.
+Débute avec 3 armes et armure de leur choix.
+GB: 1D100*INT
+
+Assassin
++1er Arme au choix Attaque et Parade : +50%.
++2eme Arme au choix Attaque et Parade : +40%.
++3eme Arme au choix Attaque et Parade : +30%.
++60% de chance de pratique l'équitation à 65% sinon seulement 25%.
++Débute avec 3 armes et armure de leur choix.
++GB: 1D100*INT
++Connaissance des poisons +30%.
++Chercher +25%.
++Déplacement silencieux +50%.
++Se cacher +40%.
++Embuscade +50%.
++Ecouter +50%.
+
+Marchand
++1er arme au choix Attaque et Parade +20%.
++Lire/Ecrire Langue Commune +70
++Persuader +50%
++Crédit +40%
++Evaluer un trésor +80%
+Débute avec l'arme de son choix + une armure(s'il réussit un jet sous sa compétence en Crédit)
++GB: 5D100 * INT
+
+Négociant
+1er arme au choix Attaque et Parade +40%.
+Lire/Ecrire Langue Commune +70
+Persuader +50%
+Crédit +40%
+Evaluer un trésor +80%
+Débute avec l'arme de son choix + une armure(s'il réussit un jet sous sa compétence en Crédit)
+GB: 5D100 * INT
+
+Marin
++1er arme au choix +40%
++Nager +50%
++Faire des noeuds +70%
++Grimper +40%
+//Grimper aux gréements +75% ( manque dans la db)
++Equilibre +50%
++Débute avec arme de son Choix
++Gb: INT*1D20
+
+Second
++1er arme au choix +42%
++Nager +53%
++Faire des noeuds +74%
++Grimper +42%
+//Grimper aux gréements +79%
++Equilibre +53%
+//Navigation +80%
+Débute avec arme de son Choix
++Gb: INT*5D20
+
+Capitaine
++1er arme au choix +44%
++Nager +55%
++Faire des noeuds +77%
++Grimper +44%
++//Grimper aux gréements +83%
++Equilibre +55%
++//Navigation +80%
+Débute avec arme de son Choix
++Gb: INT*10D20
+
+Chasseur
++1er armes au choix +30%
+Maîtrise à l'arc de +25% (attaque)
++Poser des pièges +50%
++Embuscade +50%
++Pister +50%
++Artisanat: Forgeron +20%
+Débute avec une arme de mélée, un arc et douze flèches
++GB: 1D100
+
+Fermier
++Artisanat: Forgeron +20%
++Pister +20%
+Maîtrise du bâton +30% (arme)
+Maîtrise de la hachette +15%
+Maîtrise lance a deux mains +20%
++Connaissance des Plantes +20%
+Débute avec un bâton et une hachette
++Gb: INT*1D20
+
+
+Prêtre
++Lire/Ecrire Langue Commune +80%
++Lire/Ecrire Bas Melnibonéen +60%
++Lire/Ecrire Haut Melnibonéen +40%
+Maîtrise de la dague +30%
++Connaissance des Plantes +40%
++Premier Soins +40%
++Persuader +25%
++Crédit +25%
+Débute avec une dague
++GB: 5D100
+au-delà de 25ans, le prêtre peut ajouter 1 point à son INT. Toutefois, le joueur devra réussir un jet de dés supérieur à l'INT actuelle de son personnage avec 3D10 pour augmenter sa caractéristique.
++Elan 2D6
+
+Noble
+Propriété d'un valeur de 10 000*1D100 GB
++Crédit +40%
++1er arme au choix  +40%
++2eme arme au choix +20%
+Débute avec les armes et l'armure de leur choix.
++GB: 100*1D100
+Si l'INT du noble est de 13 ou plus , il peut rejeter les dés une seconde fois sur le tableau Orignie Social et prendre les compétence d'une seconde classe. S'il tire a nouveau la classe Noble, il est très proche de la monarchie de sa nation et peut en briguer le trône. Jetez 1D6 +1 pour déterminer le nombre de prétendants entre lui et la couronne.
+
+
+Voleur
++1er arme au choix +35%
+Maîtrise de la dague +45%
++Lire/Ecrire la Langue Commune +25%
++Grimper +1D100%
++Dissimuler +1D100%
++Sauter +1D100%
++Crocheter +1D100%
++Ecouter +70%
++Voir +1D100%
++Chercher +1D100%
++Déplacement silencieux +50%
++Couper une bourse +1D100%
++Evaluer un trésors +50%
+Débute avec un dague, un arme de son choix et un matériel de crochetage.
++GB: 5D20
+
+Mendiant
++Persuader +60%
++Voir +60%
++Chercher +25%
++Crocheter +50%
+compétence toujours à 10% ( +1% par mendiant combattant avec lui)
++Doit jetez 1D20 sur le tableau des Afflictions.
+GB: 1D6
+
+Artisan
++Manipulation +70%
+90% ou plus dans leurs artisanat sont des maîtres.
++GB: DEX*1D100
++1er armes au choix +1D100%
++2eme arme au choix +15%
 
 
 

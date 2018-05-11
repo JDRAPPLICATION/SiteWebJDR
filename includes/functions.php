@@ -14,7 +14,7 @@ function SetNationality($number){
     	case 3:
     	case 4: 
     	case 5:
-    		echo 'Pan Tang';
+    		echo 'Pan_Tang';
     		break;
     	case 6: 
     	case 7: 
@@ -83,7 +83,7 @@ function SetNationality($number){
     	case 54: 
     	case 55: 
     	case 56:
-    		echo 'Désert de Larmes';
+    		echo 'Désert_de_Larmes';
     		break; 
     	case 57: 
     	case 58: 
@@ -98,7 +98,7 @@ function SetNationality($number){
     	case 65: 
     	case 66: 
     	case 67: 
-    		echo 'Ile des Cités Pourpres';
+    		echo 'Ile_des_Cités_Pourpres';
     		break;
     	case 68: 
     	case 69: 
@@ -168,7 +168,8 @@ function SetBonusDamageM($number){
     	case 14: 
     	case 15: 
     	case 16:
-    		echo '-1D6';
+            return '-1D6';
+           // define('bodaM', '-1D6');
     		break;
     	case 17: 
     	case 18: 
@@ -178,7 +179,8 @@ function SetBonusDamageM($number){
     	case 22: 
     	case 23: 
     	case 24:
-    		echo 'aucun bonus';
+            return 'aucun bonus';
+            //define('bodaM', 'aucun bonus');
     		break;
     	case 25: 
     	case 26: 
@@ -196,7 +198,8 @@ function SetBonusDamageM($number){
     	case 38: 
     	case 39: 
     	case 40: 
-    		echo '+1D6';
+            return '+1D6';
+            //define('bodaM', '+1D6');
     		break;
     	case 41: 
     	case 42: 
@@ -208,7 +211,8 @@ function SetBonusDamageM($number){
     	case 48: 
     	case 49: 
     	case 50:
-    		echo '+2D6';
+            return '+2D6';
+            //define('bodaM', '+2D6');
     		break;
 	}
 }
@@ -230,7 +234,7 @@ function SetBonusDamageT($number){
     	case 14: 
     	case 15: 
     	case 16:
-    		echo '-1D4';
+    		return '-1D4';
     		break;
     	case 17: 
     	case 18: 
@@ -240,7 +244,7 @@ function SetBonusDamageT($number){
     	case 22: 
     	case 23: 
     	case 24:
-    		echo 'aucun bonus';
+    		return 'aucun bonus';
     		break;
     	case 25: 
     	case 26: 
@@ -258,7 +262,7 @@ function SetBonusDamageT($number){
     	case 38: 
     	case 39: 
     	case 40: 
-    		echo '+1D4';
+    		return '+1D4';
     		break;
     	case 41: 
     	case 42: 
@@ -270,7 +274,7 @@ function SetBonusDamageT($number){
     	case 48: 
     	case 49: 
     	case 50:
-    		echo '+2D4';
+    		return '+2D4';
     		break;
 	}
 }
@@ -278,65 +282,65 @@ function SetAFLI($number){
     
 	switch ($number) {
 		case 1:
-		echo 'Cataracte, à moitié aveugle';
+		return 'Cataracte, à moitié aveugle';
     		break;
     	case 2:
-    	echo 'Une oreille en moins, la compétence Ecouter est divisée par deux';
+    	return 'Une oreille en moins, la compétence Ecouter est divisée par deux';
     		break;
     	case 3:
-    	echo 'Muet ou la langue tranchée';
+    	return 'Muet ou la langue tranchée';
     		break;
     	case 4: 
-    	echo 'Un oeil en moins';
+    	return 'Un oeil en moins';
     		break;
     	case 5:
-    	echo 'Plus de nez';
+    	return 'Plus de nez';
     		break;
     	case 6: 
-    	echo 'Dents totalement pourries, mauvaise haleine';
+    	return 'Dents totalement pourries, mauvaise haleine';
     		break;
     	case 7: 
-    	echo 'Plaies ouvertes';
+    	return 'Plaies ouvertes';
     		break;
     	case 8: 
-    	echo 'Lépreux';
+    	return 'Lépreux';
     		break;
     	case 9: 
-    	echo 'Hémophile';
+    	return 'Hémophile';
     		break;
 		case 10: 
-		echo 'Scorbuteux';
+		return 'Scorbuteux';
     		break;
     	case 11: 
     	$z = rand(1,4);
-    	echo $z.'doigts en moins';
+    	return $z.'doigts en moins';
     		break;
     	case 12: 
-    	echo 'Amputé d\'une main';
+    	return 'Amputé d\'une main';
     		break;
     	case 13: 
-    	echo 'Amputé d\'un pied';
+    	return 'Amputé d\'un pied';
     		break;
     	case 14: 
-    	echo 'Amputé d\'un bras';
+    	return 'Amputé d\'un bras';
     		break;
     	case 15: 
-    	echo 'Amputé d\'une jambe';
+    	return 'Amputé d\'une jambe';
     		break;
     	case 16:
-    	echo 'Amputé d\'un et bras et d\'une jambe';
+    	return 'Amputé d\'un et bras et d\'une jambe';
     		break;
     	case 17: 
-    	echo 'Chauve et galeux';
+    	return 'Chauve et galeux';
     		break;
     	case 18: 
-    	echo 'Obèse';
+    	return 'Obèse';
     		break;
     	case 19: 
-    	echo 'Squelette vivant (maigre au dernier degré)';
+    	return 'Squelette vivant (maigre au dernier degré)';
     		break;
     	case 20: 
-    	echo 'Attardé mental (ôtez 1D4 points à l\'INT)';
+    	return 'Attardé mental (ôtez 1D4 points à l\'INT)';
     		break;
 	}
 }
@@ -362,7 +366,7 @@ function SetClass($number){
         case 18: 
         case 19: 
         case 20: 
-            echo 'Guerrier';
+            return 'Guerrier';
             break;
         case 21: 
         case 22: 
@@ -374,7 +378,8 @@ function SetClass($number){
         case 28: 
         case 29: 
         case 30:
-            switch ($number) {
+            $test =rand(1,10);
+            switch ($test) {
                 case 1:
                 case 2:
                 case 3:
@@ -382,12 +387,12 @@ function SetClass($number){
                 case 5:
                 case 6: 
                 case 7: 
-                    echo 'Marchand';
+                    return 'Marchand';
                     break;
                 case 8: 
                 case 9: 
                 case 10: 
-                    echo 'Negociant';
+                    return 'Négociant';
                     break;
             }
             break; 
@@ -406,7 +411,8 @@ function SetClass($number){
         case 43: 
         case 44:
         case 45:
-            switch ($number) {
+            $test =rand(1,10);
+            switch ($test) {
                 case 1:
                 case 2:
                 case 3:
@@ -415,13 +421,13 @@ function SetClass($number){
                 case 6: 
                 case 7: 
                 case 8: 
-                    echo 'MArin';
+                    return 'Marin';
                     break;
                 case 9: 
-                    echo 'Second';
+                    return 'Second';
                     break;
                 case 10: 
-                    echo 'Capitaine';
+                    return 'Capitaine';
                     break;
             }
 
@@ -441,28 +447,28 @@ function SetClass($number){
         case 58: 
         case 59: 
         case 60: 
-            echo 'Chasseur';
+            return 'Chasseur';
             break;
         case 61: 
         case 62: 
         case 63: 
         case 64: 
         case 65: 
-            echo 'Fermier';
+            return 'Fermier';
             break;
         case 66: 
         case 67: 
         case 68: 
         case 69: 
         case 70: 
-            echo 'Prêtre';
+            return 'Prêtre';
             break;
         case 71: 
         case 72: 
         case 73: 
         case 74: 
         case 75: 
-            echo 'Noble';
+            return 'Noble';
             break;
         case 76: 
         case 77: 
@@ -474,14 +480,14 @@ function SetClass($number){
         case 83: 
         case 84: 
         case 85: 
-            echo 'Voleur';
+            return 'Voleur';
             break;
         case 86: 
         case 87: 
         case 88: 
         case 89: 
         case 90: 
-            echo 'Mendiant';
+            return 'Mendiant';
             break;
         case 91: 
         case 92: 
@@ -493,7 +499,7 @@ function SetClass($number){
         case 98: 
         case 99: 
         case 100: 
-            echo 'Artisan';
+            return 'Artisan';
             break;
     }
 }

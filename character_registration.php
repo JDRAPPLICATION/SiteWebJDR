@@ -1,5 +1,4 @@
 <?php
-    session_start(); // PERMET DE CHARGER LA SESSION
     include("includes/identifiants.php");
     include("debut.php");
 ?>
@@ -11,7 +10,6 @@
                 <p>
                         <p1>Personage</p1> </br>
                 <label for="name_character">character name</label> : <input type="text" name="name_character" id="name_character" /><br         />
-                <label for="name_player">player name</label> :  <input type="text" name="name_player" id="name_player" /><br />
                 <label for="sex">sex</label> :
                     <select name="sex">
                         <option value="M">Male</option>

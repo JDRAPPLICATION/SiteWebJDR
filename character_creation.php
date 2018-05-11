@@ -113,12 +113,18 @@
           		     											</select><br><br>
 
           		<label>Vous avez le choix entre deux nationalitées</label><select name="na">
-          		         													<option value= <?php echo SetNationality($_SESSION['n1']);?>> <?php echo SetNationality($_SESSION['n1']);?> </option>
+          		         													<option value=<?php echo SetNationality($_SESSION['n1']);?> > <?php echo SetNationality($_SESSION['n1']);?> </option>
           		         													<option value= <?php echo SetNationality($_SESSION['n2']);?> > <?php echo SetNationality($_SESSION['n2']);?> </option>
           		     													</select><br>
           		<label>pour voir la description et les diffférents bonus de la nationalité vous pouvez <a href="national.php">venir ici</a></label>
           		     													<br><br>
-
+                    <label for="nameca">character name</label> : <input type="text" name="nameca" id="nameca" /><br/>
+                    <label for="age">age</label> :  <input type="number" name="age" id="age" /><br />
+                    <label for="eyes">eyes colors</label> :  <input type="text" name="eyes" id="eyes" /><br />
+                    <label for="hairs">hairs colors</label> :  <input type="text" name="hairs" id="hairs" /><br />
+                    <label for="size">size</label> :  <input type="number" step="any" name="size" id="size" /><br />
+                    <label for="weight">weight</label> :  <input type="number" step="any" name="weight" id="weight" /><br /> 
+                    <label for="personal">personal history</label> :  <textarea name="personal" id="personal"></textarea><br />
           		     				<input type="submit" value="check les donées" name="check_les_données"></center>
         	</form>
 
