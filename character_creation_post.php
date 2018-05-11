@@ -475,25 +475,11 @@
 						    			break;
 						    		case 'Pan Tang':
 						    			$_SESSION['id_NA'] = 2;
-						    			$SC1 = SetClass(rand(1,100));
-						    			$SC2 = SetClass(rand(1,100));
-						    			if ($SC1 == "Marin" || $SC1 == "Voleur" || $SC1 == "Mendiant") {
-						    				$SC1 = "Guerrier";
-						    			}
-						    			if ($SC2 == "Marin" || $SC2 == "Voleur" || $SC2 == "Mendiant") {
-						    				$SC2 = "Guerrier";
-						    			}
-						    			if (rand(1,100) <= 20) {
-						    				$_SESSION['CS3']="Noble";
-						    			}
 						    			?>
 						    			<article class="Farticle">
 						    				<form action="character_creation_post.php" method="post">
 													<h2 style="text-align:center">Choix de la classe (tiré sur 1D100 dans le tableau des nationalité)</h2>
-													<p>Votre nationalité vous permet de choisir l'une des classe suivante:</p><select name="class">
-																																	<option value= <?php echo $SC1;?> > <?php echo $SC1;?> </option>
-																																	<option value= <?php echo $SC2;?> > <?php echo $SC2;?> </option>
-																																</select><br><br>
+													<p>Votre nationalité vous permet de jouer: <?php echo $_SESSION['CS1'].",".$_SESSION['CS2'].",".$_SESSION['CS3'] ?></p><br>
 													<?php if ($_SESSION['CS3']=="Noble") {
 						    							echo "<p>De plus vous pourrez jouer un noble ! :) </p><br><br>";
 						    							}
@@ -552,15 +538,195 @@
 						    			break;
 						    		case 'Myrrhyn':
 						    			$_SESSION['id_NA'] = 3;
+						    			$SC1 = SetClass(rand(1,100));
+						    			$SC2 = SetClass(rand(1,100));
+						    			if ($SC1 == "Marin" || $SC1 == "Voleur" || $SC1 == "Mendiant") {
+						    				$SC1 = "Guerrier";
+						    			}
+						    			if ($SC2 == "Marin" || $SC2 == "Voleur" || $SC2 == "Mendiant") {
+						    				$SC2 = "Guerrier";
+						    			}?>
+						    			<article class="Farticle">
+						    				<form action="character_creation_post.php" method="post">
+						    			<p>Votre nationalité vous permet de choisir l'une des classe suivante:</p><select name="class">
+																																	<option value= <?php echo $SC1;?> > <?php echo $SC1;?> </option>
+																																	<option value= <?php echo $SC2;?> > <?php echo $SC2;?> </option>
+																																</select><br><br>
+										<label for="cult">Vous pouvez maintenant choisir votre culte</label> :
+        											    <select name="cult">
+        											        <optgroup label="Chaos">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Chaos"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											        <optgroup label="Loyal">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Loyal"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											        <optgroup label="Elementary">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god LIKE "Elementaire%"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											        <optgroup label="Lord of beasts">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Seigneur des bêtes"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>               
+        											        </optgroup>
+        											    </select>
+													<input type="submit" value="check les donées" name="check_les_données">
+											</form>
+										</article>
+										<?php
 						    			break;
 						    		case 'Dharijor':
-						    			$_SESSION['id_NA'] = 4;
+						    		$_SESSION['id_NA'] = 4;
+						    		$SC1 = SetClass(rand(1,100));
+						    		$SC2 = SetClass(rand(1,100));
+						    		}?>
+						    			<article class="Farticle">
+						    				<form action="character_creation_post.php" method="post">
+						    			<p>Votre nationalité vous permet de choisir l'une des classe suivante:</p><select name="class">
+																																	<option value= <?php echo $SC1;?> > <?php echo $SC1;?> </option>
+																																	<option value= <?php echo $SC2;?> > <?php echo $SC2;?> </option>
+																																</select><br><br>
+										<label for="cult">Vous pouvez maintenant choisir votre culte</label> :
+        											    <select name="cult">
+        											        <optgroup label="Chaos">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Chaos"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											    </select>
+													<input type="submit" value="check les donées" name="check_les_données">
+											</form>
+										</article>
+										<?php
+						    			
 						    			break;
 						    		case 'Jharkor':
 						    			$_SESSION['id_NA'] = 5;	
+						    			$SC1 = SetClass(rand(1,100));
+						    			$SC2 = SetClass(rand(1,100));
+						    		}?>
+						    			<article class="Farticle">
+						    				<form action="character_creation_post.php" method="post">
+						    			<p>Votre nationalité vous permet de choisir l'une des classe suivante:</p><select name="class">
+																																	<option value= <?php echo $SC1;?> > <?php echo $SC1;?> </option>
+																																	<option value= <?php echo $SC2;?> > <?php echo $SC2;?> </option>
+																																</select><br><br>
+										<label for="cult">Vous pouvez maintenant choisir votre culte</label> :
+        											    <select name="cult">
+        											        <optgroup label="Chaos">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Chaos"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											    </select>
+													<input type="submit" value="check les donées" name="check_les_données">
+											</form>
+										</article>
+										<?php
 						    			break;
 						    		case 'Shazaar':
 						    			$_SESSION['id_NA'] = 6;
+						    			$SC1 = SetClass(rand(1,100));
+						    			$SC2 = SetClass(rand(1,100));
+						    		}?>
+						    			<article class="Farticle">
+						    				<form action="character_creation_post.php" method="post">
+						    			<p>Votre nationalité vous permet de choisir l'une des classe suivante:</p><select name="class">
+																																	<option value= <?php echo $SC1;?> > <?php echo $SC1;?> </option>
+																																	<option value= <?php echo $SC2;?> > <?php echo $SC2;?> </option>
+																																</select><br><br>
+										<label for="cult">Vous pouvez maintenant choisir votre culte</label> :
+        											    <select name="cult">
+        											        <optgroup label="Chaos">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Chaos"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											        <optgroup label="Loyal">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Loyal"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											        <optgroup label="Elementary">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god LIKE "Elementaire%"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>
+        											        </optgroup>
+        											        <optgroup label="Lord of beasts">
+        											            <?php
+        											                $reponse = $bdd->query('SELECT * FROM cult WHERE type_god = "Seigneur des bêtes"');
+        											                while ($donnees = $reponse->fetch())
+        											                {
+        											            ?>
+        											                    <option value= <?php echo $donnees['id_cu'];?> > <?php echo $donnees['name_cult']; ?></option>
+        											            <?php
+        											                }
+        											            ?>               
+        											        </optgroup>
+        											    </select>
+													<input type="submit" value="check les donées" name="check_les_données">
+											</form>
+										</article>
+										<?php																						
 						    			break;
 						    		case 'Tarkesh':
 						    			$_SESSION['id_NA'] = 7;

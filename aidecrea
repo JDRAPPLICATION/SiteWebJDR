@@ -22,18 +22,18 @@ Myrrhyn
 +Si le personnage est une femme ajoutez 5 à la SAN.
 +SI INT+POU >= 32 le personnage est un sorcier.
 +Enlever 2 à la TAI si >= à 9.
-Origine sociale: si Marin, Voleur ou Mendiant, alors le personnage est un guerrier.
++Origine sociale: si Marin, Voleur ou Mendiant, alors le personnage est un guerrier.
 
 Dharijor
 +Ajoutez 1D4 à la CON.
-Adoration des Seigneurs du Chaos.
++Adoration des Seigneurs du Chaos.
 
 Jharkor
 Jetez 1D6:
  -entre 1 et 2 corpulence faible
  -entre 3 et 4 corpulence moyenne
  -entre 5 et 6 corpulence forte
-Adoration des Seigneurs du Chaos.
++Adoration des Seigneurs du Chaos.
 +Enlevez 1D4 au CHA.
 +Ajoutez 1D4 à la DEX.
 
