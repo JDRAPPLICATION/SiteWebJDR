@@ -1,7 +1,7 @@
 ﻿<?php 
 include("debut.php");
 ?>
-
+	<body>
 					<div class="text">
 
 							<article class="Farticle">

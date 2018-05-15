@@ -17,8 +17,8 @@ include("debut.php");
                                         
                                         
                                                     <input type="submit" value="Envoyer" name="Envoyer">
-    </p>
-    </form>
+                                                    </p>
+                                        </form>
                                 </header>
                             </article>
     </body>

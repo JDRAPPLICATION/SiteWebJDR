@@ -73,6 +73,7 @@
 							</ul>
 						</nav>
 					</div>
+				</body>
 <?php
 
 	//Attribution des variables de session

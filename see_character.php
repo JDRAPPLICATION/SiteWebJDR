@@ -27,8 +27,10 @@ include("debut.php");
                                     </select>
                                     <p><input type="submit" value="Voir" /></p>
                         <?php
+
                                 $reponseperso= $bdd->query('SELECT * FROM personage Where id_character ='.$_POST['perso']);
                                 $donnees = $reponseperso->fetch();
+                                echo $_POST['perso']."//".$donnees['id_kn'];
                                 $reponsenatio = $bdd->query('SELECT * FROM nationality Where id_na ='.$donnees['id_na']);
                                 $donneesnatio = $reponsenatio->fetch();
                                 $reponsecult = $bdd->query('SELECT * FROM cult Where id_cu ='.$donnees['id_cu']);

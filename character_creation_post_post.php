@@ -883,7 +883,7 @@ $ws3=1;
 $ws4=1;
 $ws5=1;
 $ws6=1;
-
+$salope = $_SESSION['MS'] / 2 ;
 
 $reponsech = $bdd->query('SELECT * From characteristic Where strength = '.$_SESSION['FOR'].' && constitution = '.$_SESSION['CON'].' && size = '.$_SESSION['TAI'].' && intelligence = '.$_SESSION['INT'].' && power = '.$_SESSION['POU'].' && dexterity = '.$_SESSION['DEX'].' && charism = '.$_SESSION['CHA'].' ORDER BY id_ch DESC');
 		$donnees=$reponsech->fetch();
@@ -894,7 +894,7 @@ $reponsehp = $bdd->query('SELECT * From hp WHERE currently = '.$_SESSION['PV'].'
 		$donnees=$reponsehp->fetch();
 		$hp=$donnees['id_hp'];
 
-$reponsesf = $bdd->query('SELECT * From mental_health WHERE currently = '.$_SESSION['MS'].' && sft = '.$_SESSION['MS'].' ORDER BY id_sf DESC');
+$reponsesf = $bdd->query('SELECT * From mental_health WHERE currently = '.$_SESSION['MS'].' && sft = '.$salope.' ORDER BY id_sf DESC');
 		$donnees=$reponsesf->fetch();
 		$sf=$donnees['id_sf'];
 /*
@@ -910,7 +910,7 @@ $t5 =$_SESSION['CONdesPLA'] + $_SESSION['boCO'];
 $t6 =$_SESSION['CONdesPOI'] + $_SESSION['boCO'];
 $t7 =$_SESSION['ARTI'] + $_SESSION['boCO'];
 
-$reponsekn = $bdd->query('SELECT * From knowledge WHERE evaluate_a_treasure = '.$t1.' && first_aid = '.$t2.' && cartography = '.$t3.' && memorize = '.$t4.' && plant_knowledge = '.$t5.' && poison_knowledge = '.$t6.' && craft = '.$t6.' && id_la1 = '.$LC.' && id_la2 = '.$LBM.' && id_la3 = '.$LHM.' && id_la4 = '.$LP.' && id_la5 = '.$LM.' && id_la6 = '.$LO.' ORDER BY id_kn DESC');
+$reponsekn = $bdd->query('SELECT * From knowledge ORDER BY id_kn DESC'/*./*' WHERE evaluate_a_treasure = '.$t1.' && first_aid = '.$t2.' && cartography = '.$t3.' && memorize = '.$t4.' && plant_knowledge = '.$t5.' && poison_knowledge = '.$t6.' && craft = '.$t6.' && id_la1 = '.$LC.' && id_la2 = '.$LBM.' && id_la3 = '.$LHM.' && id_la4 = '.$LP.' && id_la5 = '.$LM.' && id_la6 = '.$LO.' ORDER BY id_kn DESC'*/);
 		$donnees=$reponsekn->fetch();
 		$kn=$donnees['id_kn'];
 
@@ -962,16 +962,16 @@ $reponseho = $bdd->query('SELECT * From home WHERE name = '.$_POST['name'].' && 
 
 $per = $bdd->prepare('INSERT INTO personage (id_player, name_character, sex, age, eyes_colors, hairs_colors, size, weight, personnal_history, stricking_fack, affliction, elan_point, id_SC1, id_SC2, id_SC3, id_ch, id_cu, id_ho, id_hp, id_sf, id_in, id_kn, id_po, id_sk, id_na, id_ws1, id_ws2, id_ws3, id_ws4, id_ws5, id_ws6) VALUES(:id_player, :name_character, :sex, :age, :eyes_colors, :hairs_colors, :size, :weight, :personnal_history, :stricking_fack, :affliction, :elan_point,  :id_SC1, :id_SC2, :id_SC3, :id_ch, :id_cu, :id_ho, :id_hp, :id_sf, :id_in, :id_kn, :id_po, :id_sk, :id_na, :id_ws1, :id_ws2, :id_ws3, :id_ws4, :id_ws5, :id_ws6)');
 $per->execute(array('id_player' => $_SESSION['id'], 
-					'name_character' =>"bob" /*$_SESSION['nameca']*/, 
-					'sex' => "F"/*$_SESSION['SEX']*/, 
-					'age' =>3/* $_SESSION['age']*/,
-					'eyes_colors' =>"bob" /*$_SESSION['eyes']*/,
-					'hairs_colors' => "bob"/*$_SESSION['hairs']*/,
-					'size' =>3 /*$_SESSION['size']*/,
-					'weight' =>3 /*$_SESSION['weight']*/,
-					'personnal_history' =>"bob" /*$_SESSION['personal']*/,
+					'name_character' =>$_SESSION['nameca'], 
+					'sex' => $_SESSION['SEX'], 
+					'age' => $_SESSION['age'],
+					'eyes_colors' =>$_SESSION['eyes'],
+					'hairs_colors' => $_SESSION['hairs'],
+					'size' =>$_SESSION['size'],
+					'weight' =>$_SESSION['weight'],
+					'personnal_history' =>$_SESSION['personal'],
 					'stricking_fack' => "",
-					'affliction' => "bob"/*$_SESSION['AFLI']*/,
+					'affliction' => $_SESSION['AFLI'],
 					'elan_point' => $_SESSION['ELAN'],
 					'id_SC1' => $_SESSION['CS1'],
 					'id_SC2' => $_SESSION['CS2'],
@@ -1024,7 +1024,7 @@ echo 'id_player'.$_SESSION['id'].
 	'//id_ws4'.$ws4.
 	'//id_ws5'.$ws5.
 	'//id_ws6'.$ws6;
-							/*$_SESSION['nameca'] ="";
+							$_SESSION['nameca'] ="";
 							$_SESSION['age'] =0;
 							$_SESSION['eyes'] ="";
 							$_SESSION['hairs'] ="";
@@ -1141,7 +1141,7 @@ echo 'id_player'.$_SESSION['id'].
 						    $_SESSION['A6n'] =0;
 						    $_SESSION['A6a'] =0;
 						    $_SESSION['A6p'] =0;
-						    $_SESSION['A6d'] =0;*/
+						    $_SESSION['A6d'] =0;
 ?>
 
 

@@ -9,7 +9,7 @@ include("includes/identifiants.php");
 								<header>
 									<h2>Les Nationalités</h2>
 								</header>
-								<p>La nationalité de votre personnage influence énormémément sur le jeu. Par exemple</br>
+								<p>La nationalité de votre personnage influence énormémément sur le jeu.</br>
 									................................................................</p>
 							</article>
 
@@ -19,7 +19,7 @@ include("includes/identifiants.php");
     		           		 		while ($donnees = $reponse->fetch())
     		           				 {
     		        			?>
-    		                			<section>
+    		                		<section>
 										<article id="Allarticle">
 											<header>
 												<h2><?php echo $donnees['name'];?></h2>
