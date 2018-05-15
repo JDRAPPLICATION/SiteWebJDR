@@ -211,48 +211,33 @@ nav li:hover .submenu{
 		font-family: 'Source code pro', Calibri, serif;
 		color:black;
 	}
-fieldset1
-{
-	display:  inline-block;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border: 2px groove;
-    width: 130px;
+
+/*text*/ /*article*/
+
+#Allarticle > p{
+	text-align: justify;
+	padding: 12px;
+	margin-left:20px;
+	margin-right:20px;
 }
-fieldset4
-{
-	display: block;
-	margin-left: 100px;
-    border: 2px groove;
-    width: 292px;
+
+#Allarticle > header{
+	margin-left:50px;
+	font-size:20px;
+	margin-bottom:0px;
 }
-fieldset2
-{
-	display:block;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-top: 0.35em;
-    padding-bottom: 0em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border: 2px groove;
-    width: 292px;
+
+#Allarticle > h1{
+	margin-left:50px;
 }
-fieldset3
-{
-	display: inline-block;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-top: 0.35em;
-    padding-bottom: 0.625em;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    border: 2px groove;
-    width: 292px;
-    height: 600px;
-}
-	
+
+#Allarticle{
+	margin-top : 50px;
+	margin-bottom : 50px;
+	font-family: 'Source code pro', Calibri, serif;
+	color:black;
+	border-bottom-color:black;
+	border-style: solid;
+	border-width: 2px;
+	background-color:white;
+}	
